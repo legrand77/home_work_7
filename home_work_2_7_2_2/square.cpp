@@ -3,6 +3,7 @@
 #include "figura.h"
 #include "quadrilateral.h"
 #include "square.h"
+#include "exceptionFigure.h"
 
     square::square(int a)
     {
@@ -15,6 +16,7 @@
         corner_B = 90;
         corner_C = 90;
         corner_D = 90;
+        if (square::error()) throw exceptionFigure(square::errorText());
     }
     bool square::error()
     {

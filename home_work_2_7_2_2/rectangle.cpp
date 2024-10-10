@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include "quadrilateral.h"
+#include "exceptionFigure.h"
 
 rectangle::rectangle(int a, int b)
 {
@@ -16,6 +17,7 @@ rectangle::rectangle(int a, int b)
     corner_B = 90;
     corner_C = 90;
     corner_D = 90;
+    if (rectangle::error()) throw exceptionFigure(rectangle::errorText());
 }
 bool rectangle::error()
 {

@@ -3,6 +3,7 @@
 #include "equilateralTriangle.h"
 #include "figura.h"
 #include "triangle.h"
+#include "exceptionFigure.h"
 
     equilateralTriangle :: equilateralTriangle(int a, int À)
     {
@@ -13,6 +14,7 @@
         corner_A = À;
         corner_B = À;
         corner_C = À;
+        if (equilateralTriangle::error()) throw exceptionFigure(equilateralTriangle::errorText());
     }
     bool equilateralTriangle::error()
     {

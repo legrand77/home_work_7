@@ -1,5 +1,6 @@
 #include "parallelogram.h"
 #include "quadrilateral.h"
+#include "exceptionFigure.h"
 
 
 
@@ -15,6 +16,7 @@
         corner_B = Â;
         corner_C = À;
         corner_D = Â;
+        if (parallelogram::error()) throw exceptionFigure(parallelogram::errorText());
     }
     bool parallelogram::error()
     {

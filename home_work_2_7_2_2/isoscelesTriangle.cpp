@@ -3,6 +3,7 @@
 #include "figura.h"
 #include "isoscelesTriangle.h"
 #include "triangle.h"
+#include "exceptionFigure.h"
 
     isoscelesTriangle::isoscelesTriangle(int a, int b, int À, int Â)
     {
@@ -13,6 +14,7 @@
         corner_A = À;
         corner_B = Â;
         corner_C = À;
+        if (isoscelesTriangle::error()) throw exceptionFigure(isoscelesTriangle::errorText());
     }
     bool isoscelesTriangle::error()
     {

@@ -3,6 +3,7 @@
 #include "figura.h"
 #include "quadrilateral.h"
 #include "rhomb.h"
+#include "exceptionFigure.h"
 
     rhomb::rhomb(int a, int À, int Â)
     {
@@ -15,6 +16,7 @@
         corner_B = Â;
         corner_C = À;
         corner_D = Â;
+        if (rhomb::error()) throw exceptionFigure(rhomb::errorText());
     }
     bool rhomb::error()
     {

@@ -3,9 +3,11 @@
 #include "straighTriangle.h"
 #include <iostream>
 #include <string>
+#include "exceptionFigure.h"
 
     straighTriangle::straighTriangle(int a, int b, int c, int А, int В)
     {
+        
         name = { "Прямоугольный треугольник " };
         line_a = a;
         line_b = b;
@@ -13,6 +15,7 @@
         corner_A = А;
         corner_B = В;
         corner_C = 90;
+        if (straighTriangle::error()) throw exceptionFigure(straighTriangle::errorText());
     }
     bool straighTriangle::error()
     {

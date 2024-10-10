@@ -2,6 +2,7 @@
 #include "quadrilateral.h"
 #include <iostream>
 #include <string>
+#include "exceptionFigure.h"
 
 quadrilateral::quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D)
 {
@@ -15,6 +16,7 @@ quadrilateral::quadrilateral(int a, int b, int c, int d, int A, int B, int C, in
     corner_B = B;
     corner_C = C;
     corner_D = D;
+    if (quadrilateral::error()) throw exceptionFigure(quadrilateral::errorText());
 }
 
 void quadrilateral::printBadge()

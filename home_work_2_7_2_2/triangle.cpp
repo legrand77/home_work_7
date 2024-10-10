@@ -2,11 +2,11 @@
 #include "triangle.h"
 #include <iostream>
 #include <string>
+#include "exceptionFigure.h"
 
 
 triangle::triangle(int a, int b, int c, int А, int В, int C)
-{
-	
+{ 
 	nSide = 3;
 	name = { "Треугольник " };
 	line_a = a;
@@ -15,6 +15,7 @@ triangle::triangle(int a, int b, int c, int А, int В, int C)
 	corner_A = А;
 	corner_B = В;
 	corner_C = C;
+	if (triangle::error()) throw exceptionFigure(triangle::errorText());
 };
 bool triangle::error()
 {
